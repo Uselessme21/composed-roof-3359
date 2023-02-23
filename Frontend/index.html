@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <style>
+        
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #fff;
+        }
+        #nav{
+            width: 100%;
+            z-index: 99;
+            border: 1px solid beige;
+            position:fixed;
+            background-color: #fff;
+        }
+        #nav>#nav1{
+            position:sticky;
+            display: flex;
+            justify-content: space-between;
+            /* padding: 0 20px 0 20px; */
+            align-items: center;
+        }
+       #nav>#nav1>div{
+        width:auto;
+       }
+        #nav1>div:nth-child(1){
+            border:1px solid #d31e1e;
+            padding-right: 100PX;
+        }
+        #nav1>div:nth-child(1)>i{
+            /* border:1px solid #d31e1e; */
+            padding-left: 15px;
+            cursor: pointer;
+            
+        }
+        #nav1>div:nth-child(2){
+            /* border: 1px solid rgb(0, 0, 0); */
+            height: 50px;
+            
+        }
+        
+        #nav1>div:nth-child(2)>img{
+            /* border: 1px solid rgb(0, 0, 0); */
+            height: 100%;
+        }
+
+        #nav1>div:nth-child(3){
+          
+            display: flex;
+            justify-content: space-between;
+        }
+        #nav1>div:nth-child(3)>i{
+            padding-left: 19px ;
+            padding-right: 19px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid #d31e1e;
+           
+        }
+        #nav1>div:nth-child(3)>span>input{
+            border: none;
+            outline: none;
+            text-align:start;
+            height: 90%;
+            /* margin-bottom: 2px; */
+            
+        }
+        #nav1>div:nth-child(3)>span>i{
+            cursor: pointer;
+            /* border-left: 1px solid black; */
+        }
+        #nav1>div:nth-child(3)>span{
+            border: 4px solid black;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 2px;
+        }
+ @media screen and (max-width: 800px){
+    #nav1>div:nth-child(3)>span>input{
+           display: none;
+            
+        }
+        #nav1>div:nth-child(2)>img{
+            /* border: 1px solid rgb(0, 0, 0); */
+            height: 80%;
+        }
+        #nav1>div:nth-child(1){
+           
+            padding-right: 10px;
+        }
+        }
+
+ /* nav2 */
+
+        
+
+
+
+       
+
+        /* nav2 */
+ nav{
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  margin-top: 50px;
+  background: #ffffff;
+}
+nav input{
+  display: none;
+}
+nav .wrapper{
+  position: relative;
+  width: 100%;
+  padding: 0px 30px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .logo a{
+  color: #000000;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.wrapper .nav-links{
+  display: inline-flex;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links li a{
+  color: #b9b9b9;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 300;
+  padding: 9px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+  background: #000000;
+}
+.nav-links .mobile-item{
+  display: none;
+}
+.nav-links .drop-menu{
+  position: absolute;
+  background: #1e2022;
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.nav-links li:hover .mega-box{
+  transition: all 0.3s ease;
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+.drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+}
+.mega-box{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+}
+.mega-box .content{
+  background: #000000;
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+.mega-box .content .row{
+  width: 60%;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.content .row img{
+  width: 190px;
+  height: auto;
+  object-fit: cover;
+}
+.content .row header{
+  color: #858282;
+  font-size: 15px;
+  font-weight: 400;
+  text-align:left;
+}
+.content .row .mega-links{
+  /* margin-left: -40px; */
+  border-left: 1px solid rgba(255,255,255,0.09);
+}
+.row .mega-links li{
+  padding: 0 10px;
+}
+.row .mega-links li a{
+  padding: 0px;
+  padding: 0 10px;
+  color: #ffffff;
+  font-size: 15px;
+  display: block;
+  text-align:left;
+}
+.row .mega-links li a:hover{
+  color: #fffcfc;
+}
+.wrapper .btn{
+  color: #ff0000;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper .btn.close-btn{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn{
+    display: flex;
+    text-align: start;
+    align-items: start;
+  }
+  .wrapper .nav-links{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    left: -100%;
+    background: #242526;
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
+  }
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #242526;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3A3B3C;
+  }
+  #menu-btn:checked ~ .nav-links{
+    left: 0%;
+  }
+  #menu-btn:checked ~ .btn.menu-btn{
+    display: none;
+  }
+  #close-btn:checked ~ .btn.menu-btn{
+    display: block;
+  }
+  .nav-links li{
+    margin: 15px 10px;
+  }
+  .nav-links li a{
+    padding: 0 20px;
+    display: block;
+    font-size: 20px;
+  }
+  .nav-links .drop-menu{
+    position: static;
+    opacity: 1;
+    top: 65px;
+    visibility: visible;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+  #showDrop:checked ~ .drop-menu,
+  #showMega:checked ~ .mega-box{
+    max-height: 100%;
+  }
+  .nav-links .desktop-item{
+    display: none;
+  }
+  .nav-links .mobile-item{
+    display: block;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .nav-links .mobile-item:hover{
+    background: #3A3B3C;
+  }
+  .drop-menu li{
+    margin: 0;
+  }
+  .drop-menu li a{
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .mega-box{
+    position: static;
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .mega-box .content{
+    box-shadow: none;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+  .mega-box .content .row{
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mega-box .content .row:nth-child(1),
+  .mega-box .content .row:nth-child(2){
+    border-top: 0px;
+  }
+  .content .row .mega-links{
+    border-left: 0px;
+    padding-left: 15px;
+  }
+  .row .mega-links li{
+    margin: 0;
+  }
+  .content .row header{
+    font-size: 19px;
+  }
+}
+nav input{
+  display: none;
+}
+
+.body-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+.body-text div{
+  font-size: 45px;
+  font-weight: 600;
+}
+
+
+/* hjgfdfg */
+ /* checck */
+ #check{
+            /* position: fixed; */
+            /* border: 1px solid rgb(0, 0, 0); */
+           
+            height: 9000px;
+        }
+        #check>#myVideo{
+            top: 0;
+            left: 0;
+           
+            position:static;
+            object-fit: cover;
+            filter:blur(8888);
+            padding-top: 100px;
+            width: 100%;
+            pointer-events: none;
+            z-index: 00;
+        }
+        #check>video::-webkit-media-controls{
+          display: none;
+          
+          
+        }
+        #check>div{
+            font-size: 90px;
+            z-index: 0;
+        }
+    </style>
+  </head>
+  <body>
+  <div id="nav">
+     <!-- nav1 -->
+     <div id="nav1">
+        <div class="log">
+            <i class='bx bxs-location-plus'></i>
+            <i id="login" class='bx bx-user'></i>
+          
+        </div>
+        <div class="logo">
+            <img src="./LOGO/logo.png" alt="">
+        </div>
+        <div class="store">
+            <span >
+                <input type="search" name="" id="search"><i id="searchi" class='bx bx-search' ></i>
+            </span>
+            
+            <i class='bx bxs-shopping-bag-alt' ></i>
+        </div>
+      </div>
+  </div>
+       
+     
+    
+     <!-- nav2 -->
+   <nav>
+    <div class="wrapper">
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class='bx bx-menu-alt-left'></i></label>
+        
+        <!-- 1 -->
+        <li>
+            <a href="#" class="desktop-item">SHIRTS</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">SHIRTS</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dwfa8f88e3/tn-ss23-025.jpg#cm_sp=TN-new-shirts" alt="">
+                  <a href="">view shirts</a>
+                </div>
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw53e8d1e4/tn-ss23-002.jpg#cm_sp=TN-polos" alt="">
+                    <a href="">SHIRTS OF THE SEASON</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dwea36771b/tn-ss23-028.jpg#cm_sp=TN-accessories_belts" alt="">
+                    <a href="">CUSTOM SHIRTS</a>
+                  </div>
+                <div class="row">
+                  <header>STYLE</header>
+                  <ul class="mega-links">
+                    <li><a href="#">DRESS</a></li>
+                    <li><a href="#">BUSINESS CASUAL</a></li>
+                    <li><a href="#">CASUAL</a></li>
+                    <li><a href="#">CUSTOM SHIRTS</a></li>
+                    <li><a href="#">NON-IRON</a></li>
+                    <li><a href="#">LUXURY</a></li>
+                    <li><a href="#">TUXEDO</a></li>
+                    <li><a href="#">SHORT SLEEVE</a></li>
+                    <li><a href="#">COLLARLESS</a></li>
+                    <li><a href="#">POLOS</a></li>
+                    <li><a href="#">T-SHIRTS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>CLEARANCE</header>
+                    <li><a href="#">SHIRTS</a></li>
+
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>COLOR</header>
+                  <ul class="mega-links">
+                    <li><a href="#">WHITE</a></li>
+                    <li><a href="#">BLUE</a></li>
+                    <li><a href="#">PINK</a></li>
+                    <li><a href="#">PATTERN</a></li>
+                    <li><a href="#">LIBERTY PRINT</a></li>
+                    <li><a href="#">CHECK</a></li>
+                    <li><a href="#">STRIPE</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>FIT</header>
+                    <li><a href="#">CLASSIC</a></li>
+                    <li><a href="#">SLIM</a></li>
+                    <li><a href="#">EXTRA SLIM</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>FABRIC</header>
+                  <ul class="mega-links">
+                    <li><a href="#">OXFORD</a></li>
+                    <li><a href="#">POPLIN</a></li>
+                    <li><a href="#">LINEN</a></li>
+                    <li><a href="#">TWILL</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>INSPIRATION</header>
+                    <li><a href="#">NEW YORK JETS</a></li>
+                    <li><a href="#">JOE ROOT LOOKS</a></li>
+                    <li><a href="#">FULHAM FC</a></li>
+                    <li><a href="#">SEASONAL LOOKS</a></li>
+                    <li><a href="#">EDITORIAL</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2 -->
+        <li>
+            <a href="#" class="desktop-item">SUITS</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">SUITS</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw0abe8a8f/tn-ss23-026.jpg#cm_sp=TN-suits_new_season" alt="">
+                  <a href="">NEW SUITS</a>
+                </div>
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw1ce69c52/tn-ss23-005.jpg#cm_sp=TN-suits_business" alt="">
+                    <a href="">BUSINESS SUITS</a>
+                  </div>
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw83b98a47/tn-ss23-006.jpg#cm_sp=TN-blazers" alt="">
+                    <a href="">BLAZERS</a>
+                  </div>
+                <div class="row">
+                  <header>OCCASION</header>
+                  <ul class="mega-links">
+                    <li><a href="#">BUSINESS</a></li>
+                    <li><a href="#">WEDDING</a></li>
+                    <li><a href="#">BLACK TIE</a></li>
+                    <li><a href="#">RACES</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>COLOR</header>
+                  <ul class="mega-links">
+                    <li><a href="#">NAVY &BLUE SUITS</a></li>
+                    <li><a href="#">BLACK SUITS</a></li>
+                    <li><a href="#">GREY SUITS</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>FIT</header>
+                    <li><a href="">SLIM FIT SUITS</a></li>
+                    <li><a href="#">CLASSIC FIT SUITS</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>SUIT SEPARATES</header>
+                  <ul class="mega-links">
+                    <li><a href="#">SUIT JACKETS</a></li>
+                    <li><a href="#">SUIT PANTS</a></li>
+                    <li><a href="#">VESTS</a></li>
+                    <li><a href="#">BLAZERS & SMART JACKETS</a></li>
+                    <header>CLEARANCE</header>
+                    <li><a href="">SUITS</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                    <header>STYLE</header>
+                    <ul class="mega-links">
+                      <li><a href="#">TUXEDOS</a></li>
+                      <li><a href="#">MORNING SUITS</a></li>
+                      <li><a href="#">ITALIAN SUITS</a></li>
+                      <li><a href="#">VIEW ALL</a></li>
+                      <header>INSPIRATION</header>
+                      <li><a href="">NEW YORK JETS</a></li>
+                     <li><a href="">JOE ROOT LOOKS</a></li>
+                     <li><a href="">FULHAM FC</a></li>
+                     <li><a href="">SEASONAL LOOKS</a></li>
+                     <li><a href="">EDITORIAL</a></li>
+                     <li><a href="">ABOUT US</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 3 -->
+        <li>
+            <a href="#" class="desktop-item">PANTS</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">PANTS</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dwd29c2a89/tn-ss23-007.jpg#cm_sp=TN-trousers-new-season" alt="">
+                    <a href="">NEW PANTS</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dwc08a472d/tn-aw22-002.jpg#cm_sp=TN-trousers-chinos" alt="">
+                    <a href="">CHINOS</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw6147d4cb/tn-ss23-024-new.jpg#cm_sp=TN-Trousers-smart-trousers" alt="">
+                    <a href="">SMART PANTS</a>
+                  </div>
+                <div class="row">
+                  <header>STYLE</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CHINOS</a></li>
+                    <li><a href="#">SUIT</a></li>
+                    <li><a href="#">SMART</a></li>
+                    <li><a href="#">LIGHTWEIGHT</a></li>
+                    <li><a href="">SHORTS</a></li>
+                    <li><a href="">JOGGERS</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>COLOR</header>
+                  <ul class="mega-links">
+                    <li><a href="#">BLUE</a></li>
+                    <li><a href="#">GREY</a></li>
+                    <li><a href="#">BROWN</a></li>
+                    <li><a href="#">BLACK</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                    <header>CLEARANCE</header>
+                    <li><a href="">PANTS</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>FIT</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CLASSIC</a></li>
+                    <li><a href="#">SLIM</a></li>
+                    <li><a href="#">EXTRA SLIM</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>INSPIRATION</header>
+                    <li><a href="">NEW YORK JETS</a></li>
+                   <li><a href="">JOE ROOT LOOKS</a></li>
+                   <li><a href="">FULHAM FC</a></li>
+                   <li><a href="">SEASONAL LOOKS</a></li>
+                   <li><a href="">EDITORIAL</a></li>
+                   <li><a href="">ABOUT US</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- 4 -->
+          <li>
+            <a href="#" class="desktop-item">SWEATER</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">SWEATER</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw055705ac/tn-ss23-008.jpg#cm_sp=TN-knitwear-new-season" alt="">
+                    <a href="">NEW SWEATER</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw2dde8d44/tn-ss23-009.jpg#cm_sp=TN-knitwear-zip-neck" alt="">
+                    <a href="">ZIP NECKS</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw1db4d68e/tn-ss23-010.jpg#cm_sp=TN-knitwear-jumpers" alt="">
+                    <a href="">ZUMPERS</a>
+                  </div>
+                <div class="row">
+                  <header>STYLE</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CHINOS</a></li>
+                    <li><a href="#">SUIT</a></li>
+                    <li><a href="#">SMART</a></li>
+                    <li><a href="#">LIGHTWEIGHT</a></li>
+                    <li><a href="">SHORTS</a></li>
+                    <li><a href="">JOGGERS</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>COLOR</header>
+                  <ul class="mega-links">
+                    <li><a href="#">BLUE</a></li>
+                    <li><a href="#">GREY</a></li>
+                    <li><a href="#">BROWN</a></li>
+                    <li><a href="#">BLACK</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                    <header>CLEARANCE</header>
+                    <li><a href="">PANTS</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>FIT</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CLASSIC</a></li>
+                    <li><a href="#">SLIM</a></li>
+                    <li><a href="#">EXTRA SLIM</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>INSPIRATION</header>
+                    <li><a href="">NEW YORK JETS</a></li>
+                   <li><a href="">JOE ROOT LOOKS</a></li>
+                   <li><a href="">FULHAM FC</a></li>
+                   <li><a href="">SEASONAL LOOKS</a></li>
+                   <li><a href="">EDITORIAL</a></li>
+                   <li><a href="">ABOUT US</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        <!-- 5 -->
+        <li>
+            <a href="#" class="desktop-item">JACKET & COATS</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">JACKET & COATS</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw6b41f18f/tn-ss23-011.jpg#cm_sp=TN-outerwear_new_season" alt="">
+                    <a href="">NEW COATS & JACKETS</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dwfff2fdd0/tn-ss23-027.jpg#cm_sp=TN-outerwear_coats" alt="">
+                    <a href="">COATS</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw6bb26ed4/tn-ss23-029.jpg#cm_sp=TN-blazers" alt="">
+                    <a href="">BLAZERS</a>
+                  </div>
+                <div class="row">
+                  <header>STYLE</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CHINOS</a></li>
+                    <li><a href="#">SUIT</a></li>
+                    <li><a href="#">SMART</a></li>
+                    <li><a href="#">LIGHTWEIGHT</a></li>
+                    <li><a href="">SHORTS</a></li>
+                    <li><a href="">JOGGERS</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>COLOR</header>
+                  <ul class="mega-links">
+                    <li><a href="#">BLUE</a></li>
+                    <li><a href="#">GREY</a></li>
+                    <li><a href="#">BROWN</a></li>
+                    <li><a href="#">BLACK</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                    <header>CLEARANCE</header>
+                    <li><a href="">PANTS</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>FIT</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CLASSIC</a></li>
+                    <li><a href="#">SLIM</a></li>
+                    <li><a href="#">EXTRA SLIM</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>INSPIRATION</header>
+                    <li><a href="">NEW YORK JETS</a></li>
+                   <li><a href="">JOE ROOT LOOKS</a></li>
+                   <li><a href="">FULHAM FC</a></li>
+                   <li><a href="">SEASONAL LOOKS</a></li>
+                   <li><a href="">EDITORIAL</a></li>
+                   <li><a href="">ABOUT US</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 6 -->
+          <li>
+            <a href="#" class="desktop-item">SHOES</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">SHOES</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw69cdd665/tn-ss23-022.jpg#cm_sp=TN-shoes" alt="">
+                    <a href="">SHOES</a>
+                  </div>
+                  
+                <div class="row">
+                  <header>STYLE</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CHINOS</a></li>
+                    <li><a href="#">SUIT</a></li>
+                    <li><a href="#">SMART</a></li>
+                    <li><a href="#">LIGHTWEIGHT</a></li>
+                    <li><a href="">SHORTS</a></li>
+                    <li><a href="">JOGGERS</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>COLOR</header>
+                  <ul class="mega-links">
+                    <li><a href="#">BLUE</a></li>
+                    <li><a href="#">GREY</a></li>
+                    <li><a href="#">BROWN</a></li>
+                    <li><a href="#">BLACK</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                    <header>CLEARANCE</header>
+                    <li><a href="">PANTS</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>FIT</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CLASSIC</a></li>
+                    <li><a href="#">SLIM</a></li>
+                    <li><a href="#">EXTRA SLIM</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>INSPIRATION</header>
+                    <li><a href="">NEW YORK JETS</a></li>
+                   <li><a href="">JOE ROOT LOOKS</a></li>
+                   <li><a href="">FULHAM FC</a></li>
+                   <li><a href="">SEASONAL LOOKS</a></li>
+                   <li><a href="">EDITORIAL</a></li>
+                   <li><a href="">ABOUT US</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 7 -->
+
+          <li>
+            <a href="#" class="desktop-item">ACCESSORIES</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">ACCESSORIES</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dwbdbbefb5/tn-ss23-017.jpg#cm_sp=TN-accessories_newAccessories" alt="">
+                    <a href="">NEW ACCESSORIES</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dwbee3ed15/tn-ss23-018.jpg#cm_sp=TN-accessories_ties" alt="">
+                    <a href="">TIE & BOW-TIES</a>
+                  </div>
+                  <div class="row">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Sites-ctshirts-site-us/default/dw57380990/tn-ss23-016.jpg#cm_sp=TN-accessories_socks" alt="">
+                    <a href="">BELTS</a>
+                  </div>
+                <div class="row">
+                  <header>STYLE</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CHINOS</a></li>
+                    <li><a href="#">SUIT</a></li>
+                    <li><a href="#">SMART</a></li>
+                    <li><a href="#">LIGHTWEIGHT</a></li>
+                    <li><a href="">SHORTS</a></li>
+                    <li><a href="">JOGGERS</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>COLOR</header>
+                  <ul class="mega-links">
+                    <li><a href="#">BLUE</a></li>
+                    <li><a href="#">GREY</a></li>
+                    <li><a href="#">BROWN</a></li>
+                    <li><a href="#">BLACK</a></li>
+                    <li><a href="">VIEW ALL</a></li>
+                    <header>CLEARANCE</header>
+                    <li><a href="">PANTS</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>FIT</header>
+                  <ul class="mega-links">
+                    <li><a href="#">CLASSIC</a></li>
+                    <li><a href="#">SLIM</a></li>
+                    <li><a href="#">EXTRA SLIM</a></li>
+                    <li><a href="#">VIEW ALL</a></li>
+                    <header>INSPIRATION</header>
+                    <li><a href="">NEW YORK JETS</a></li>
+                   <li><a href="">JOE ROOT LOOKS</a></li>
+                   <li><a href="">FULHAM FC</a></li>
+                   <li><a href="">SEASONAL LOOKS</a></li>
+                   <li><a href="">EDITORIAL</a></li>
+                   <li><a href="">ABOUT US</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class='bx bx-menu'></i></label>
+    </div>
+  </nav>
+
+  
+    <section id="check">
+<video loop playsinline poster="true"  autoplay id="myVideo" src="../LOGO/23311066-4102ecdd.mp4" type="video/mp4">
+        
+    </video>
+    <div>
+gigtttt
+    </div>
+    </section>
+    
+
+    
+   </div>
+  </body>
+</html>
+<script>
+
+let shopingbag= document.querySelector('.bxs-shopping-bag-alt');
+let searchin= document.getElementById('search')
+let search= document.getElementById('searchi')
+let login= document.getElementById('login');
+login.addEventListener('click', ()=>{
+self.location="./html/register.html"
+})
+
+search.addEventListener('click', ()=>{
+   let value= searchin.value
+   console.log(value)
+})
+
+
+
+shopingbag.addEventListener('click', ()=>{
+    console.log("clicked")
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
