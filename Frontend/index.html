@@ -7,22 +7,24 @@
     <title>Home</title>
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- bootstraps -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 <!-- css -->
     <link rel="stylesheet" href="./style/nav.css">
     
     <style>
-*{
+/* *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
-}
+} */
 
-.container{
+.container1{
     width: 100%;
     height: 100vh;
-    background-color: rgba(0,0,0,0.4);
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,11 +35,15 @@
 }
 
 .content1 h1{
-    font-size: 95px;
+    font-size: 55px;
     color: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
-
+.content1 p{
+  font-size: 30px;
+  font-weight: 500;
+  color: #ffff01;
+}
 .content1 a{
     font-size: 23px;
     color: #fff;
@@ -59,7 +65,52 @@
     bottom: 0;
     z-index: -1;
 }
+/*  */
+.content2{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: start;
+  /* position: fixed; */
+}
+.content2 h1{
+    font-size: 50px;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+.content2 p{
+    font-size: 20px;
+    color: #ffffff;
+    
+}
+.content2 h1:nth-child(1){
+color: #ffbf00;
+}
+.content2 a{
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.content2 a:hover{
+    background-color: #fff;
+    color: #000;
+}
 
+.background{
+  position: absolute;
+  width:100%;
+  object-fit:fill;
+  height: auto;
+    height: auto;
+  fill: blue;
+    right: 0;
+    
+    z-index: -1;
+}
 @media (min-aspect-ratio:16/9) {
     .background-clip{
         width: 100%;
@@ -68,7 +119,7 @@
 }
 
 @media  screen and (max-width: 800px) {
-  .content1 h1{
+  .content1 h1,.content1 p, .content2 h1 ,.content2 p{
    display: none;
 }
 }
@@ -79,7 +130,7 @@
 }
 }
 @media (max-aspect-ratio:16/9) {
-    .background-clip{
+    .background-clip, .background{
         width: auto;
         height: 100%;
     }
@@ -89,20 +140,22 @@
     /* PRODUCTS */
 .product {
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
   padding: 20px;
+ 
+  
 }
 
 .product-category {
   padding: 0 10vw;
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 20px;
   text-transform: capitalize;
 }
 
 .product-container {
-  padding: 0 10vw;
+  padding: 3vw;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -122,8 +175,9 @@
 .product-image {
   position: relative;
   width: 100%;
-  height: 350px;
+  height:auto;
   overflow: hidden;
+
 }
 
 .product-thumb {
@@ -204,7 +258,7 @@
 .nxt-btn {
   border: none;
   width: 10vw;
-  height: 100%;
+  height: 95%;
   position: absolute;
   top: 0;
   display: flex;
@@ -266,9 +320,82 @@
   grid-column: span 2;
   margin-bottom: 10px;
 }
+/* poster 4 */
+.max{
+  background: white;
+  /* border: 1px solid grey; */
+width: 100%;
+  display: grid;
+  grid-template-columns: repeat( 2, 1fr);
+  gap: 10px;
+}
+.max .min{
+  /* border: 1px solid black; */
+text-align: center;
+padding:10px 5px;
+}
+.max .min img{
+  width: 100%;
+  /* border: 1px solid black; */
+}
+.max .min p{
+  width: 50%;
+  margin: auto;
+  white-space:pre-line;
+}
+.max .min p span{
+  text-transform:uppercase;
+  text-decoration: solid;
+  font-weight: bolder;
+  /* color: #ff0000; */
+}
+.max .min button{
+  border: none;
+  border: 1px solid black;
+  padding: 5px 49px;
+  border-radius: 4px;
+  margin-top: 9px;
+  color: black;
+  background: white;
+}
 
+/* written */
 
-
+.p{
+  width: 100%;
+  background: rgba(231, 228, 228, 0.622);
+  margin: 15px 0;
+  padding: 30px 0;
+}
+.p .p0{
+  max-width:1600px ;
+  /* border: 1px solid black; */
+  margin: auto;
+}
+.p .p0 .p1{
+display: flex;
+justify-content: center;
+}
+.p .p0 .p1 img{
+  width: 100px;
+ padding-left: 9px;
+}
+.p .p0 .p1 .p2 p:nth-child(1){
+font-size: 15px;
+}
+.p .p0 .p1 .p2 p:nth-child(1)>span:nth-child(1){
+  font-weight: bolder;
+}
+.p .p0 .p1 .p2 p:nth-child(2){
+font-size: 12px;
+}
+.p .p0 h2{
+  color: #aa5151;
+}
+.p .p0 .p1 .p3{
+  font-size: 19px;
+  padding: 0 9px;
+}
     </style>
   </head>
   <body>
@@ -767,7 +894,7 @@
   </nav>
 <!-- main section -->
 <!-- video  -->
-<div class="container">
+<div class="container1">
 
   <video autoplay loop muted plays-inline class="background-clip">
       <source src="./LOGO/23311066-4102ecdd.mp4" type="video/mp4">
@@ -776,6 +903,8 @@
   <div class="content1">
       <h1>Timeless Classics</h1>
       <h1>For Working in Every Time Zone</h1>
+      <p>4 SHIRTS OR POLOS FOR $239 <br>
+        SAVE UP TO $235</p>
       <a href="#">SHOP NEW SEASON</a>
       <a href="#">SHOP SHIRTS</a>
   </div>
@@ -789,132 +918,201 @@
         <div class="product-container">
             <div class="product-card">
                 <div class="product-image">
-                    <span class="discount-tag">50% off</span>
+                    <span class="discount-tag">30% off</span>
                     <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw7ad03bfa/merchAssets/SS23/Homepage/hero-carousel/hc-019.jpg" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <button class="card-btn">add to cart</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">brand</h2>
-                    <p class="product-short-description">a short line about the cloth..</p>
-                    <span class="price">$20</span><span class="actual-price">$40</span>
+                    <h2 class="product-brand">LINEN SHIRT</h2>
+                    <p class="product-short-description"> NEW COLLECTION</p>
+                    <span class="price">$30</span><span class="actual-price">$60</span>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <span class="discount-tag">50% off</span>
+                    <span class="discount-tag">80% off</span>
                     <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw34fe9658/merchAssets/SS23/Homepage/hero-carousel/hc-012.jpg" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <button class="card-btn">add to cart</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">brand</h2>
-                    <p class="product-short-description">a short line about the cloth..</p>
+                    <h2 class="product-brand">SUITS</h2>
+                    <p class="product-short-description">ULTIMATE PERFORMANCE.</p>
                     <span class="price">$20</span><span class="actual-price">$40</span>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <span class="discount-tag">50% off</span>
+                    <span class="discount-tag">60% off</span>
                     <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwa86b7a50/merchAssets/SS23/Homepage/hero-carousel/hc-0026.jpg" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <button class="card-btn">add to cart</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">brand</h2>
-                    <p class="product-short-description">a short line about the cloth..</p>
-                    <span class="price">$20</span><span class="actual-price">$40</span>
+                    <h2 class="product-brand">CASUAL SHIRTS</h2>
+                    <p class="product-short-description">4 FOR 239, SAVE 235</p>
+                    <span class="price">$50</span><span class="actual-price">$100</span>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
                     <span class="discount-tag">50% off</span>
                     <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw37e622e1/merchAssets/SS23/Homepage/hero-carousel/hc-013.jpg" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <button class="card-btn">add to cart</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">brand</h2>
-                    <p class="product-short-description">a short line about the cloth..</p>
-                    <span class="price">$20</span><span class="actual-price">$40</span>
+                    <h2 class="product-brand">SWEATERS</h2>
+                    <p class="product-short-description">NEW COLORS</p>
+                    <span class="price">$20</span><span class="actual-price">$80</span>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <span class="discount-tag">50% off</span>
+                    <span class="discount-tag">40% off</span>
                     <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwb8f934b4/merchAssets/SS23/Homepage/hero-carousel/hc-014.jpg" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <button class="card-btn">add to cart</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">brand</h2>
-                    <p class="product-short-description">a short line about the cloth..</p>
-                    <span class="price">$20</span><span class="actual-price">$40</span>
+                    <h2 class="product-brand">PANTS</h2>
+                    <p class="product-short-description">BUY 2, SAVE 40</p>
+                    <span class="price">$1200</span><span class="actual-price">$1140</span>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <span class="discount-tag">50% off</span>
+                    <span class="discount-tag">90% off</span>
                     <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw2f6ecc84/merchAssets/SS23/Homepage/hero-carousel/hc-018.jpg" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <button class="card-btn">add to cart</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">brand</h2>
-                    <p class="product-short-description">a short line about the cloth..</p>
+                    <h2 class="product-brand">POLOS</h2>
+                    <p class="product-short-description">4 FOR 456 , SAVE 12</p>
                     <span class="price">$20</span><span class="actual-price">$40</span>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <span class="discount-tag">50% off</span>
+                    <span class="discount-tag">45% off</span>
                     <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw7ad03bfa/merchAssets/SS23/Homepage/hero-carousel/hc-019.jpg" class="product-thumb" alt="">
-                    <button class="card-btn">add to wishlist</button>
+                    <button class="card-btn">add to CART</button>
                 </div>
                 <div class="product-info">
-                    <h2 class="product-brand">brand</h2>
-                    <p class="product-short-description">a short line about the cloth..</p>
-                    <span class="price">$20</span><span class="actual-price">$40</span>
+                    <h2 class="product-brand">NEW</h2>
+                    <p class="product-short-description">NEW ARRIVAL</p>
+                    <span class="price">$80</span><span class="actual-price">$90</span>
                 </div>
             </div>
             <div class="product-card">
               <div class="product-image">
-                  <span class="discount-tag">50% off</span>
+                  <span class="discount-tag">76% off</span>
                   <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw34fe9658/merchAssets/SS23/Homepage/hero-carousel/hc-012.jpg" class="product-thumb" alt="">
-                  <button class="card-btn">add to wishlist</button>
+                  <button class="card-btn">add to cart</button>
               </div>
               <div class="product-info">
-                  <h2 class="product-brand">brand</h2>
-                  <p class="product-short-description">a short line about the cloth..</p>
+                  <h2 class="product-brand">T-RIGHTS</h2>
+                  <p class="product-short-description">NEW IN TOWN</p>
                   <span class="price">$20</span><span class="actual-price">$40</span>
               </div>
           </div>
           <!-- one card -->
           <div class="product-card">
             <div class="product-image">
-                <span class="discount-tag">50% off</span>
+                <span class="discount-tag">29% off</span>
                 <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwa86b7a50/merchAssets/SS23/Homepage/hero-carousel/hc-0026.jpg" class="product-thumb" alt="">
-                <button class="card-btn">add to wishlist</button>
+                <button class="card-btn">add to cart</button>
             </div>
             <div class="product-info">
-                <h2 class="product-brand">brand</h2>
-                <p class="product-short-description">a short line about the cloth..</p>
-                <span class="price">$20</span><span class="actual-price">$40</span>
+                <h2 class="product-brand">I-STACK</h2>
+                <p class="product-short-description">SAVE 500</p>
+                <span class="price">$2000</span><span class="actual-price">$4000</span>
             </div>
         </div>
             
         </div>
     </section>
 <!-- poster -->
-<div class="container">
+<div class="container1">
 
-  <img src="./LOGO/poster2.jpg" class="background-clip">
+  <img src="./LOGO/poster2.jpg" class="background">
       
 </img>
 
-  <div class="content1">
-      <h1>Timeless Classics</h1>
-      <h1>For Working in Every Time Zone</h1>
-      <a href="#">SHOP NEW SEASON</a>
-      <a href="#">SHOP SHIRTS</a>
+  <div class="content2">
+      <h1>NEW</h1>
+      <h1>Meet the Henley Weave, <br>
+our shirt of the season.</h1>
+      <p>You won’t find this dobby weave anywhere else. The cutaway collar has a modern feel <br> for formal and relaxed looks, and natural stretch from 100% cotton keeps things comfy.
+<br>
+This non-iron hero comes in 10 designs and 3 fits. <br>
+Pick from checks, fresh pastels and classic blues.</p>
+      <a href="#">SHOP THE COLLECTION</a>
+  </div>
+</div>
+<!--poster 4-->
+
+<div class="max">
+  <div class="min">
+    <img src="./LOGO/p1.jpg" class="">
+    <p><span>New York Jets Offical Partner</span> <br>
+      Two iconic cities, two buzzworthy brands,
+      one very exciting partnership.
+      </p>
+      <button>LEARN MORE</button>
+  </div>
+  <div class="min">
+    <img src="./LOGO/p2.jpg" class="">
+    <p><span>Tyrwhitt Icons</span> <br> 
+      The collection that every man should own.
+Timeless, versatile pieces designed to slot into your wardrobe with ease.
+      </p>
+
+      <button>SHOP NOW</button>
+  </div>
+  <div class="min">
+    <img src="./LOGO/p3.jpg" class="">
+    <p><span>Seasonal Looks</span> <br>
+      Discover the latest seasonal looks, whether you’re dressing for the commute,
+a work trip or weekend away. Stay comfy in style.
+      </p>
+      <button>SHOP NOW</button>
+  </div>
+  <div class="min">
+    <img src="./LOGO/p4.jpg" class="">
+    <p><span>A Tailored Life</span> <br>
+      Meet unique leaders and explore style hints and tips through
+Nick Wheeler's interviews in A Tailored Life.
+      </p>
+      <button>EXPLORE MORE</button>
   </div>
 </div>
 
+<!-- written -->
+<div class="p">
+  <div class="p0">
+    <div class="p1">
+      <div class="p2">
+        <p>Average Customer Rating <span>4.7</span><span>/5</span>  |</p>
+        <p>Independent Service Rating based on 690237 verified reviews. <a href=""> Read all reviews</a></p>
+      </div>
+<img src="./LOGO/download.svg" alt="">
+    </div>
+    <hr>
+    <h2>REVIEWS</h2>
+    <div class="p1">
+     
+      <div class="p3"> Trusted Customer - Friday, 24 February 2023
+        Very friendly, helpful, and professional. .
+        Mr Benedict Whalley - Friday, 24 February 2023</div>
+      <div class="p3">I paid a visit to Jermin street branch and purchased a couple of items and the staff customer servi...</div>
+      <div class="p3"> Always willing to help customers on which clothes to buy
+        Mr Michael Iyekekpolor - Friday, 24 February 2023
+        "Highly supportive"</div>
+      <div class="p3"> "Excellent service as usual"
+        Great service as usual. Regular updates received
+        Dr Emamoke Ubogu - Friday, 24 February 2023
+        "Best standards provided"</div>
+    </div>
+  </div>
 
+</div>
 <!-- footer -->
     <footer>
       <div class="line"><p>We will keep you posted on new products and great offers... </p> 
