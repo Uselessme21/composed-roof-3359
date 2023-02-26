@@ -23,55 +23,55 @@ themeToggler.addEventListener('click',()=>{
 
 })
 
-const orders =[
-    {
-        productName:"shirts",
-        productNumber:23,
-        paymentStatus:"paid",
-        shipping:"pending"
-    },
-    {
-        productName:"shirts",
-        productNumber:23,
-        paymentStatus:"paid",
-        shipping:"pending"
-    },
-    {
-        productName:"shirts",
-        productNumber:23,
-        paymentStatus:"paid",
-        shipping:"Declined"
-    },
-    {
-        productName:"shirts",
-        productNumber:23,
-        paymentStatus:"paid",
-        shipping:"pending"
-    },
-    {
-        productName:"shirts",
-        productNumber:23,
-        paymentStatus:"paid",
-        shipping:"Delivered"
-    },
-    {
-        productName:"shirts",
-        productNumber:23,
-        paymentStatus:"paid",
-        shipping:"pending"
-    }
-]
+// const orders =[
+//     {
+//         productName:"shirts",
+//         productNumber:23,
+//         paymentStatus:"paid",
+//         shipping:"pending"
+//     },
+//     {
+//         productName:"shirts",
+//         productNumber:23,
+//         paymentStatus:"paid",
+//         shipping:"pending"
+//     },
+//     {
+//         productName:"shirts",
+//         productNumber:23,
+//         paymentStatus:"paid",
+//         shipping:"Declined"
+//     },
+//     {
+//         productName:"shirts",
+//         productNumber:23,
+//         paymentStatus:"paid",
+//         shipping:"pending"
+//     },
+//     {
+//         productName:"shirts",
+//         productNumber:23,
+//         paymentStatus:"paid",
+//         shipping:"Delivered"
+//     },
+//     {
+//         productName:"shirts",
+//         productNumber:23,
+//         paymentStatus:"paid",
+//         shipping:"pending"
+//     }
+// ]
 
-orders.forEach((order) => {
-    const tr = document.createElement('tr');
-    const trContent=`
-    <td>${order.productName}</td>
-    <td>${order.productNumber}</td>
-    <td>${order.paymentStatus}</td>
-    <td class="${order.shipping==='Declined'? 'danger' :order.shipping==='pending'? 'warning':'primary'}">${order.shipping}</td>
-    <td class='primary'>Details</td>
-    `;
-    tr.innerHTML=trContent;
-    document.querySelector('table>tbody').appendChild(tr);
+// orders.forEach((order) => {
+//     const tr = document.createElement('tr');
+//     const trContent=`
+//     <td>${order.productName}</td>
+//     <td>${order.productNumber}</td>
+//     <td>${order.paymentStatus}</td>
+//     <td class="${order.shipping==='Declined'? 'danger' :order.shipping==='pending'? 'warning':'primary'}">${order.shipping}</td>
+//     <td class='primary'>Details</td>
+//     `;
+//     tr.innerHTML=trContent;
+//     document.querySelector('table>tbody').appendChild(tr);
 
-});
+// });

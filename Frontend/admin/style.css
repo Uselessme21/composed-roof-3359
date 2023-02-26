@@ -115,6 +115,7 @@ b{
 }
 .danger{
     color:var(--color-danger);
+    cursor: pointer;
 }
 .success{
     color:var(--color-success);

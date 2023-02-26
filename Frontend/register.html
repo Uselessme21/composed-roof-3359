@@ -17,11 +17,11 @@
    <form action="" method="post">
       <h3>register now</h3>
       
-      <input type="text" name="name" required placeholder="enter your name">
-      <input type="email" name="email" required placeholder="enter your email">
-      <input type="password" name="password" required placeholder="enter your password">
-      <input type="password" name="cpassword" required placeholder="confirm your password">
-      <input type="submit" name="submit" value="register now" class="form-btn">
+      <input type="text" id="name" required placeholder="enter your name">
+      <input type="email" id="email" required placeholder="enter your email">
+      <input type="password" id="password" required placeholder="enter your password">
+      <input type="password" id="cpassword" required placeholder="confirm your password">
+      <input type="submit" id="submit" value="register now" class="form-btn">
       <p>already have an account? <a href="login_form.html">login now</a></p>
    </form>
 
@@ -29,3 +29,41 @@
 
 </body>
 </html>
+<script>
+ 
+ let btn= document.querySelector('form')
+ console.log(btn.name);
+
+ btn.addEventListener('submit',(e)=>{
+   e.preventDefault();
+   let payload= {
+      name: btn.name.value,
+      email: btn.email.value,
+      password:btn.password.value,
+      cpassword: btn.cpassword.value
+   }
+try {
+   if(payload.name!=null && payload.email!=null && payload.password!=null && payload.cpassword!=null){
+      fetch('https://outrageous-cape-bass.cyclic.app/users/register',{
+         method:"POST",
+         body: JSON.stringify(payload)
+      }).then((res)=>{
+         // console.log(res);
+         return res.json()
+      }).then((dt)=>{
+         if(dt.message=="user registered successfully"){
+            self.location='login_form.html'
+         }else{
+            console.log(dt);
+         alert(dt.message)
+         }
+         
+      }).catch(err=> console.log(err));
+   }
+} catch (error) {
+   
+}
+ console.log(payload);
+
+ })
+</script>
