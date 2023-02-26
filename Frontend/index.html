@@ -7,8 +7,8 @@
     <title>Home</title>
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<!-- bootstraps -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
 
 <!-- css -->
     <link rel="stylesheet" href="./style/nav.css">
@@ -70,16 +70,21 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  justify-content: start;
+  justify-content:right;
   /* position: fixed; */
+
 }
+
+
+
 .content2 h1{
-    font-size: 50px;
+    font-size: 30px;
     color: #ffffff;
     margin-bottom: 50px;
+    margin-right: 0;
 }
 .content2 p{
-    font-size: 20px;
+    font-size: 15px;
     color: #ffffff;
     
 }
@@ -91,7 +96,8 @@ color: #ffbf00;
     color: #fff;
     text-decoration: none;
     border: 2px solid #fff;
-    padding: 15px 25px;
+    padding: 15px 25px ;
+    margin-bottom: 9px;
     border-radius: 50px;
     transition: 0.3s;
 }
@@ -122,7 +128,16 @@ color: #ffbf00;
   .content1 h1,.content1 p, .content2 h1 ,.content2 p{
    display: none;
 }
+.p1{
+  flex-direction: column;
+
 }
+.p1 .p2, .p1 .p3{
+ margin-bottom: 20px;
+}
+}
+
+
 @media  screen and (max-width: 500px) {
   .content1 a{
    display: flex;
@@ -1113,6 +1128,71 @@ Nick Wheeler's interviews in A Tailored Life.
   </div>
 
 </div>
+<!-- poster3 -->
+<div class="container1">
+
+  <img src="./LOGO/poster3.jpg" class="background">
+      
+</img>
+
+  <div class="content2">
+      <h1>PERSONALISED SHIRT DESIGNS
+Custom Shirts</h1>
+      <h1>WITH OUR CUSTOM SHIRT RANGE
+        <br>
+1. PICK YOUR
+FABRIC <br>
+
+Pick your fabric
+2. TELL US YOUR
+SIZE & FIT
+<br>
+Tell us your size
+3. DEFINE YOUR
+STYLE, 
+</h1>
+      <p>Define your style
+Our new Custom Shirt tool is here! Get creative as you pick your 
+ <br> fabric, collar, cuffs and all the details that make it 
+<br>
+one-of-a-kind, then get it fitted to your measurements. <br>
+From just $119. Buy 2, Save 10%.</p>
+      <a href="#">START DESIGNING</a>
+      <a href="">FIND OUT MORE</a>
+  </div>
+</div>
+
+<!-- written2 -->
+<div class="p">
+   <div class="crd">
+   <i class='bx bx-circle'></i>
+    <h5>CARBON NEUTRAL</h5>
+    <p>We are proud to be Carbon Neutral with Planet Mark</p>
+   </div>
+   <div class="crd">
+   <i class='bx bxs-truck' ></i>
+
+
+    <h5>   SECURE DELIVERY WITH PREMIUM SHIPPING</h5>
+    <p>Premium shipping options available at checkout for full tracking end-to-end</p>
+   </div>
+ 
+
+   <div class="crd">
+    <i class='bx bxs-lock' ></i>
+    <h5>  SAFE & EASY PAYMENT</h5>
+    <p>Shopping is safe with Charles Tyrwhitt. We accept payments via credit card, PayPal and Apple Pay</p>
+   </div>
+  
+
+   <div class="crd">
+    <i class='bx bxs-shopping-bags' ></i>
+    <h5> 6-MONTH RETURNS</h5>
+    <p>Exchange or return your purchase to stores or online, up to six months after receiving them</p>
+   </div>
+  
+</div>
+
 <!-- footer -->
     <footer>
       <div class="line"><p>We will keep you posted on new products and great offers... </p> 

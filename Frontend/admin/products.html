@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a class="active" href="index.html">
+                <a href="index.html">
                     <span class="material-symbols-sharp">
                         grid_view
                         </span>
@@ -39,7 +39,7 @@
                         </span>
                         <h3>customers</h3>
                 </a>
-                <a   href="">
+                <a  href="">
                     <span  class="material-symbols-sharp">
                         receipt_long
                         </span>
@@ -60,7 +60,7 @@
                             0
                         </span>
                 </a>
-                <a href="products.html">
+                <a class="active"  href="products.html">
                     <span class="material-symbols-sharp">
                         inventory
                         </span>
@@ -175,24 +175,37 @@
             </div>
             <!-- end insights -->
 
-            <!-- <div class="recent-orders">
-                <h2>Recent Orders</h2>
+            <div class="recent-orders">
+                <h2>All Products</h2>
                 <table>
                     <thead>
                         <tr>
                             <th>product Name</th>
-                            <th>product Number</th>
-                            <th>payment</th>
-                            <th>status</th>
+                            <th>product ID</th>
+                            <th>detail</th>
+                            <th>type</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                      
+                        <!-- <tr>
+                            <td>mini dro</td>
+                            <td>8977</td>
+                            <td>due</td>
+                            <td class="warning">pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>mini dro</td>
+                            <td>8977</td>
+                            <td>due</td>
+                            <td class="warning">pending</td>
+                            <td class="primary">Details</td>
+                        </tr> -->
                     </tbody>
                 </table>
                 <a href="">Show All</a>
-            </div> -->
+            </div>
         </main>
         <!-- end of main -->
         <div class="right">
@@ -326,3 +339,72 @@
 </html>
 
 <script src="script.js"></script>
+
+<script>
+    function fetching (){
+    fetch('https://outrageous-cape-bass.cyclic.app/posts/',{
+        method: 'GET',
+        headers:{
+            "content-type": "application/json"
+        }
+    }).then((res)=>{
+        console.log(res)
+        return res.json()
+    }).then((data)=>{
+        append(data)
+    }).catch((err)=>{
+        console.log(err);
+    })
+}
+fetching()
+
+
+function append(orders){
+orders.forEach((order) => {
+    const tr = document.createElement('tr');
+  
+    let td1= document.createElement('td');
+    td1.innerHTML=`${order.name}`
+    let td2= document.createElement('td');
+    td2.innerHTML=`${order._id}`
+    let td3= document.createElement('td');
+    td3.innerHTML=`${order.detail}`;
+    let td4= document.createElement('td');
+    td4.innerHTML=`${order.type}`
+    let td5= document.createElement('td');
+    td5.setAttribute('class',"danger")
+    td5.innerHTML="Delete";
+    td5.addEventListener('click', (e)=>{
+        e.preventDefault()
+        console.log(order._id)
+        fetch(`https://outrageous-cape-bass.cyclic.app/posts/delete${order._id}`,{
+        method:'DELETE',
+        headers:{
+            "content-type": "application/json"
+        }
+    }).then((res)=>{
+        console.log(res)
+        return res.json()
+    }).then((data)=>{
+        console.log(data);
+        alert(data.message);
+        window.location.reload()
+        fetching()
+    }).catch((err)=>{
+        console.log(err);
+        
+        alert(err.message)
+    })
+    })
+    tr.append(td1,td2,td3,td4,td5);
+    document.querySelector('table>tbody').appendChild(tr);
+
+});
+
+}
+
+
+function Delete(id){
+    console.log(id)
+}
+</script>

@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       <!--css  -->
       <link rel="stylesheet" href="./style.css">
+
+      <style>
+        #addProduct{
+            margin: auto;
+            margin-top: 90px;
+            padding: 0 50px;
+        }
+       main #addProduct form{
+            display: flex;
+            flex-direction: column;
+        }
+        main #addProduct form input{
+           padding: 10px;
+           margin: 5px 0;
+        }
+        main #addProduct form input[type="submit"]{
+            color: greenyellow;
+            background: floralwhite;
+        }
+      </style>
 </head>
 <body>
     <div class="container">
@@ -26,7 +46,7 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a class="active" href="index.html">
+                <a href="index.html">
                     <span class="material-symbols-sharp">
                         grid_view
                         </span>
@@ -39,7 +59,7 @@
                         </span>
                         <h3>customers</h3>
                 </a>
-                <a   href="">
+                <a  href="">
                     <span  class="material-symbols-sharp">
                         receipt_long
                         </span>
@@ -60,7 +80,7 @@
                             0
                         </span>
                 </a>
-                <a href="products.html">
+                <a   href="products.html">
                     <span class="material-symbols-sharp">
                         inventory
                         </span>
@@ -78,7 +98,7 @@
                         </span>
                         <h3>settings</h3>
                 </a>
-                <a href="addproduct.html">
+                <a class="active" href="addproduct.html">
                     <span class="material-symbols-sharp">
                      add
                         </span>
@@ -175,24 +195,18 @@
             </div>
             <!-- end insights -->
 
-            <!-- <div class="recent-orders">
-                <h2>Recent Orders</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>product Name</th>
-                            <th>product Number</th>
-                            <th>payment</th>
-                            <th>status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      
-                    </tbody>
-                </table>
-                <a href="">Show All</a>
-            </div> -->
+            <div id="addProduct">
+                
+               <form action="" method="post">
+                <input type="text" placeholder="product name" name="name" id="name">
+                <input type="text" placeholder="image url" name="img" id="img">
+                <input type="text" placeholder="price" name="price" id="price">
+                <input type="text" placeholder="detail" name="detail" id="detail">
+                <input type="text" placeholder="type" name="type" id="type">
+                <input type="submit" value="Submit">
+               </form>
+                
+            </div>
         </main>
         <!-- end of main -->
         <div class="right">
@@ -326,3 +340,38 @@
 </html>
 
 <script src="script.js"></script>
+
+
+<script>
+    let form = document.querySelector('#addProduct form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let name =form.name.value;
+        let img =form.img.value;
+        let price =form.price.value;
+        let detail=form.detail.value;
+        let type =form.type.value;
+
+        let payload =JSON.stringify({
+            name,img,price,detail,type
+        })
+        fetch('https://outrageous-cape-bass.cyclic.app/posts/add' ,{
+            method:"Post",
+            headers:{
+                "Content-Type": "application/json",
+                "Authorization":""
+            },
+            body:payload
+        }).then((res)=>{
+            console.log(res)
+            return res.json()
+        }).then((data)=>{
+            console.log(data)
+            alert(data.message)
+        }).catch((err) =>{
+            console.log(err)
+        })
+
+    })
+</script>

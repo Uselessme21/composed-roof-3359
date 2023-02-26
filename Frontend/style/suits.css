@@ -1,0 +1,246 @@
+		:root{
+			--gra: linear-gradient(45deg, cyan, royalblue);
+		}
+	
+		main{
+			
+			max-width: 95%;
+			background: white;
+			margin:  auto;
+			padding-top: 120px;
+			font-family: sans-serif;
+		}
+		header{
+			max-width: 100%;
+			height: 100px;
+			border-bottom: 2px solid #e5e5e5;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		header ul li{
+			list-style: none;
+			padding: 20px;
+			margin: 10px;
+			float: left;
+			font-size: 20px;
+			border-radius: 35px;
+			/* background: red; */
+
+		}
+		header ul li a{
+			color: inherit;
+			text-decoration: none;
+		}
+		header ul li.active{
+			background: var(--gra);
+		}
+		header ul li.active a{
+			color: white;
+			font-weight: bold;
+		}
+		.filter-condition{
+			padding: 20px;
+			height: 100px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.filter-condition select{
+			width: 120px;
+		    padding: 0 0 0 10px;
+		    border: none;
+		    outline: none;
+		    font-weight: bold;
+		    color: purple;
+		    background: transparent;
+		    cursor: pointer;
+		}
+		.product-field{
+
+			padding:  10px;
+			width: 100%;
+
+			margin: auto;
+		}
+		.product-field ul{
+			width: 100%;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			
+			flex-wrap: wrap;
+		}
+		.product-field ul li{
+			list-style: none;
+			width: auto;
+			height: 450px;
+			transition: 0.5s all;
+			background: whitesmoke;
+			/* overflow: hidden; */
+			border-radius: 20px;
+			padding: 10px;
+			margin: 200px 10px 0 10px;
+			position: relative;
+		}
+		picture{
+			background: #eee;
+			padding: 0px;
+		    position: absolute;
+		    right: 0;
+		    bottom: 40%;
+		    width:80% ;
+		    height: 100%;
+		    border-radius: 50px 20px 20px 20px;
+		    /* transform: skewY(30deg); */
+		    overflow: hidden;
+		    box-shadow: 0px 1px 0px #00000020, -1px 0px 0px #ccc;
+		}
+		picture img {
+		  width: 100%;
+		  height: 100%;
+		  z-index: 1;
+		  /* transform: skewY(-30deg); */
+		  padding:0;
+		}
+		.detail{
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.detail .icon{
+			width: 30%;
+		    height: 55%;
+		    padding: 10px 5px;
+			display: flex;
+			flex-direction: column;
+		}
+		.icon span{
+			background: #00000030;
+		    display: inline-block;
+		    width: 40px;
+		    height: 40px;
+		    line-height: 40px;
+		    text-align: center;
+		    padding: 0;
+		    border-radius: 50%;
+		    margin: 0 0 15px 5px;
+		    font-size: 20px;
+		    color: white;
+		}
+		.icon span:hover{
+			background: var(--gra);
+			cursor: pointer;
+		}
+		.detail > strong{
+			display: inherit;
+			margin: 20px;
+			font-size: 30px;
+			letter-spacing: 2px;
+			color: #555;
+		}
+		.detail > span{
+			display: inherit;
+			padding: 0 20px;
+    		width: 80%;
+		}
+		.detail small{
+			display: inline-block;
+		    padding: 8px 20px;
+		    margin: 15px;
+		    font-weight: bold;
+		    border-radius: 6px;
+		    border: 1px solid #999;
+		    cursor: pointer;
+		}
+		.detail small:hover{
+			    background: var(--gra);
+			    color: white;
+			    border-color: cyan;
+		}
+		li h4{
+		    position: absolute;
+		    right: 10px;
+		    top: 50%;
+		    font-size: 30px;
+		    color: #555;
+		    text-shadow: 1px 1px 2px black;
+		}
+
+.poster{
+	display: grid;
+	grid-template-areas: 'l l l a b c';
+	height: 400px;
+	background: #cbcbcb;
+}
+.poster .text{
+	width: 100%;
+	grid-area: l;
+	color: #555;
+	text-align: center;
+	align-items: center;
+}
+.poster .text h1{
+	color: black;
+	padding-bottom: 30px;
+}
+.poster .text p{
+	color: rgb(126, 126, 126);
+	font-size: 11px;
+	padding: 0 40px;
+}
+.poster  img{
+	height: 100%;
+}
+.poster .photo1{
+	width: 100%;
+	height:400px;
+	grid-area: a;
+	color: antiquewhite;
+}
+.poster .photo2{
+	height: 400px;
+	width: 20%;
+	grid-area: b;
+	color: aquamarine;
+}
+.poster .photo3{
+	height: 400px;
+	width: 20%;
+	grid-area: c;
+	color: rgb(0, 255, 255);
+}
+		@media  screen and (max-width:1600px){
+			.product-field ul{
+				
+				grid-template-columns: repeat(3, 1fr);
+				
+			}
+		}
+		@media  screen and (max-width:1200px){
+			.poster .photo2{
+			display: none;
+			}
+		}
+		@media  screen and (max-width:995px){
+			.product-field ul{
+				
+				grid-template-columns: repeat(2, 1fr);
+				
+			}
+			.poster .photo1{
+				display: none;
+				}
+		}
+		@media  screen and (max-width:660px){
+			.indicator{
+				display: none;
+			}
+			.poster{
+				display: none;
+			}
+			.product-field ul{
+				
+				grid-template-columns: repeat(1, 1fr);
+				
+			}
+		}

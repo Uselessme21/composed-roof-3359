@@ -7,10 +7,11 @@
     <title>SUITS</title>
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/e962f2728f.js" crossorigin="anonymous"></script>
 <!-- css -->
     <link rel="stylesheet" href="./style/nav.css">
-    
+    <link rel="stylesheet" href="./style/suits.css">
     <style>
 
     </style>
@@ -511,9 +512,49 @@
     </div>
   </nav>
 <!-- main section -->
+<main>
+  <header>
+    <ul class="indicator">
+      <li data-filter="Home" ><a href="#">Home</a></li>
+      <li data-filter="suits" class="active"><a href="#">Suits</a></li>
+      <!-- <li data-filter="Watch"><a href="#">Watch</a></li>
+      <li data-filter="Shoes"><a href="#">Shoes</a></li>
+      <li data-filter="Mobile"><a href="#">Mobiles</a></li>
+      <li data-filter="Accessories"><a href="#">Accessories</a></li> -->
+    </ul>
+    <div class="filter-condition">
+      <span>View As a</span>
+      <select name="" id="select">
+        <option value="Default">Default</option>
+        <option value="LowToHigh">Low to high</option>
+        <option value="HighToLow">High to low</option>
+      </select>
+    </div>
+  </header>
+  <div class="poster">
+    <div class="text">
+      
+      <h1>MEN'S SUITS</h1>
+      <p>Our suits are all about expert tailoring. We have smart and comfortable business suits for men, crafted from soft wool. Browse understated plain options or embrace bold style with standout checks. For special occasions, classic morning suits that combine tail coats with flat-fronted pants will have you looking the part.</p>
+    </div>
+    <div class="photo1">
+      <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwbc8be2c2/merchAssets/AW22/TIBs/tib-aw22-016.jpg" alt=""> 
+    </div>
+    <div class="photo2">
+      <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwb9ab237d/merchAssets/AW22/TIBs/tib-aw22-017.jpg" alt="">
+    </div>
+    <div class="photo3">
+      <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwfa7f8fec/merchAssets/AW22/TIBs/tib-aw22-018.jpg" alt="">
+    </div>
+  </div>
+  <hr>
+  <div class="product-field">
+    <ul class="items">
+     <!-- append -->
 
-
-
+    </ul>
+  </div>
+</main>
 
 <!-- footer -->
     <footer>
@@ -609,3 +650,93 @@
   </body>
 </html>
 <script src="./src/nav.js"></script>
+<script>
+
+  function fetching(){
+    fetch('https://outrageous-cape-bass.cyclic.app/posts/?type=suits',{
+      method:"GET",
+      headers:{
+        "content-type":"application/json",
+        "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZiNGQwNzdjMmM5ZWM5ZDY5ZDk5ZjciLCJpYXQiOjE2Nzc0MTQxNzl9.JJ5wo9h4gLbpZH-W1T1u0F669X9c5nbZ6jKIjsu4ULI"
+
+      },
+    }).then((res)=>{
+      console.log(res)
+      return res.json()
+    }).then((data)=>{
+      console.log(data)
+      items =data
+      append(data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
+  fetching()
+  let ul=document.querySelector('.product-field>.items')
+  
+  function append(items){
+    items.forEach((item) => {
+      
+  
+   
+    let img =document.createElement('img');
+    img.src=`${item.img}`;
+    img.alt='none'
+    let picture = document.createElement('picture')
+    picture.append(img)
+   
+    
+    let div = document.createElement('div')
+    div.setAttribute('class', 'detail')
+    // 
+    let p= document.createElement('p')
+    p.setAttribute('class', 'icon')
+  
+    // 
+    // span1
+  let span = document.createElement('span')
+  let i = document.createElement('i')
+  i.setAttribute('class', 'far fa-heart')
+  span.appendChild(i)
+  // span1
+  let span1 = document.createElement('span')
+  let i1 = document.createElement('i')
+  i1.setAttribute('class', 'far fa-share-square')
+  span1.appendChild(i1)
+  // span2
+  let span2 = document.createElement('span')
+  let i2 = document.createElement('i')
+  i2.setAttribute('class', 'fas fa-shopping-basket')
+  span2.appendChild(i2);
+  
+  p.append(span , span1 , span2)
+  // p.innerText=x
+    let strong = document.createElement('strong')
+    strong.innerText=`${item.name}`
+    let span3 = document.createElement('span')
+    span3.innerText=`${item.detail}`;
+    let small = document.createElement('small')
+    small.innerHTML='BUY NOW';
+    small.addEventListener('click',(e)=>{
+  e.preventDefault();
+  console.log("jj");
+    })
+    let h4 = document.createElement('h4')
+  h4.innerHTML=`$ ${item.price}`;
+    
+  
+  
+  
+  div.append(p, strong , span3 , small)
+  
+  let li =document.createElement('li')
+      li.setAttribute('data-category', '')
+      li.setAttribute('data-price','')
+     li.append(picture , div , h4)
+     ul.appendChild(li);
+  
+  });
+}
+  </script>
+  
+

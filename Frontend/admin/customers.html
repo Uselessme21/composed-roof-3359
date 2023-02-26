@@ -26,14 +26,14 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a class="active" href="index.html">
+                <a  href="index.html">
                     <span class="material-symbols-sharp">
                         grid_view
                         </span>
                         <h3>dashboard</h3>
                 </a>
                
-                <a href="customers.html">
+                <a class="active" href="customers.html">
                     <span class="material-symbols-sharp">
                         person
                         </span>
@@ -84,7 +84,7 @@
                         </span>
                         <h3>add products</h3>
                 </a>
-                <a href="">
+                <a href="../index.html">
                     <span class="material-symbols-sharp">
                         logout
                         </span>
@@ -175,24 +175,37 @@
             </div>
             <!-- end insights -->
 
-            <!-- <div class="recent-orders">
-                <h2>Recent Orders</h2>
+            <div class="recent-orders">
+                <h2>All users</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>product Name</th>
-                            <th>product Number</th>
-                            <th>payment</th>
-                            <th>status</th>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>email</th>
+                            <th>userType</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                      
+                        <!-- <tr>
+                            <td>mini dro</td>
+                            <td>8977</td>
+                            <td>due</td>
+                            <td class="warning">pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>mini dro</td>
+                            <td>8977</td>
+                            <td>due</td>
+                            <td class="warning">pending</td>
+                            <td class="primary">Details</td>
+                        </tr> -->
                     </tbody>
                 </table>
                 <a href="">Show All</a>
-            </div> -->
+            </div>
         </main>
         <!-- end of main -->
         <div class="right">
@@ -324,5 +337,38 @@
     
 </body>
 </html>
-
 <script src="script.js"></script>
+<script>
+function fetching (){
+    fetch('https://outrageous-cape-bass.cyclic.app/users/admin',{
+        method: 'GET',
+        headers:{
+            "content-type": "application/json"
+        }
+    }).then((res)=>{
+        console.log(res)
+        return res.json()
+    }).then((data)=>{
+        append(data)
+    })
+}
+fetching()
+
+
+function append(orders){
+orders.forEach((order) => {
+    const tr = document.createElement('tr');
+    const trContent=`
+    <td>${order.name}</td>
+    <td>${order._id}</td>
+    <td>${order.email}</td>
+    <td class="${order.userType==='admin'? 'danger' :order.userType==='user'? 'warning':'primary'}">${order.userType}</td>
+    <td class='primary'>Details</td>
+    `;
+    tr.innerHTML=trContent;
+    document.querySelector('table>tbody').appendChild(tr);
+
+});
+
+}
+</script>
